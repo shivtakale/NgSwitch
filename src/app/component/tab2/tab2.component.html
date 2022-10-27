@@ -1,0 +1,47 @@
+<ul class="nav nav-pills mb-4">
+  <li class="nav-item">
+    <!-- <a href="javascript:;" class="nav-link"
+    [ngClass] = "{'active' : selectedFrameWork === 'angular'}" -->
+    <a href="javascript:;" class="nav-link"
+    [ngClass]="{'active': selectedFrameWork === 'angular'}"
+    (click)="selectedFrameWork = 'angular'"
+    >
+      Angular
+    </a>
+    <a href="javascript:;" class="nav-link"
+    [class.active]=" selectedFrameWork === 'react'"
+    (click)="selectedFrameWork = 'react'"
+    >
+      React
+    </a>
+    <a href="javascript:;" class="nav-link"
+    [ngClass]="{'active': selectedFrameWork === 'vue'}"
+    (click)="selectedFrameWork = 'vue'"
+    >
+      Vue
+    </a>
+  </li>
+</ul>
+
+<div [ngSwitch]="selectedFrameWork">
+  <div class="card" *ngSwitchCase="'angular'">
+    <div class="card-body">
+      <p><strong>Angular</strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cupiditate, ipsum eius ipsam nostrum, commodi molestias minus soluta perspiciatis quod at. Nulla quaerat rem iste soluta provident! Quasi, neque autem?</p>
+    </div>
+  </div>
+  <div class="card" *ngSwitchCase="'react'">
+    <div class="card-body">
+      <p><strong>React</strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cupiditate, ipsum eius ipsam nostrum, commodi molestias minus soluta perspiciatis quod at. Nulla quaerat rem iste soluta provident! Quasi, neque autem?</p>
+    </div>
+  </div>
+  <div class="card" *ngSwitchCase="'vue'">
+    <div class="card-body">
+      <p><strong>Vue</strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cupiditate, ipsum eius ipsam nostrum, commodi molestias minus soluta perspiciatis quod at. Nulla quaerat rem iste soluta provident! Quasi, neque autem?</p>
+    </div>
+  </div>
+  <div class="card" *ngSwitchDefault>
+    <div class="card-body">
+      <strong>No Framework is selected</strong>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<!-- <button class="btn btn-info" (click)="onClick()">click</button> -->
+<!-- <button class="btn btn-info" (click)= "isDnone = !isDnone">click</button> -->
+<!-- <p class="divider"></p> -->
+<!-- <div class="box" [ngClass]="{'d-none' : isDnone}"></div> -->
+<!-- <div class="box" [class.d-none] = "isDnone"></div> -->
+
+
+<ul class="nav nav-pills mb-4">
+  <li class="nav-item">
+    <!-- <a href="javascript:;" class="nav-link"
+    [ngClass] = "{'active' : selectedFrameWork === 'angular'}" -->
+    <a href="javascript:;" class="nav-link"
+    [class.active] = "selectedFrameWork === 'angular'"
+    (click)="onNavLinkClick($event)">
+      Angular
+    </a>
+    <a href="javascript:;" class="nav-link"
+    [ngClass] = "{'active' : selectedFrameWork === 'react'}"
+    (click)="onNavLinkClick($event)">
+      React
+    </a>
+    <a href="javascript:;" class="nav-link"
+    [ngClass] = "{'active' : selectedFrameWork === 'vue'}"
+    (click)="onNavLinkClick($event)">
+      Vue
+    </a>
+  </li>
+</ul>
+
+<div>
+  <div class="card" *ngIf="selectedFrameWork=== 'angular'">
+    <div class="card-body">
+      <p><strong>Angular</strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cupiditate, ipsum eius ipsam nostrum, commodi molestias minus soluta perspiciatis quod at. Nulla quaerat rem iste soluta provident! Quasi, neque autem?</p>
+    </div>
+  </div>
+  <div class="card" *ngIf="selectedFrameWork=== 'react'">
+    <div class="card-body">
+      <p><strong>React</strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cupiditate, ipsum eius ipsam nostrum, commodi molestias minus soluta perspiciatis quod at. Nulla quaerat rem iste soluta provident! Quasi, neque autem?</p>
+    </div>
+  </div>
+  <div class="card" *ngIf="selectedFrameWork=== 'vue'">
+    <div class="card-body">
+      <p><strong>Vue</strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos cupiditate, ipsum eius ipsam nostrum, commodi molestias minus soluta perspiciatis quod at. Nulla quaerat rem iste soluta provident! Quasi, neque autem?</p>
+    </div>
+  </div>
+</div>
+
